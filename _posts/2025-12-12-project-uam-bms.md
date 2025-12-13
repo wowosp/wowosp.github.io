@@ -2,7 +2,7 @@
 layout: post
 title:  "[Project] 이온풍 UAM 개발기 - 4만 볼트와 FPU 없는 MCU의 사투"
 date:   2023-12-12
-categories: [Dev, project]
+categories: [Dev, Project]
 tags: [UAM, Arduino, BMS, Troubleshooting, 회로설계]
 ---
 
@@ -29,7 +29,7 @@ tags: [UAM, Arduino, BMS, Troubleshooting, 회로설계]
 2.  **MCU는 거북이:** 배터리 보호(BMS)를 위해 온도를 감시해야 하는데, 사용한 아두이노 MCU에는 **FPU(부동소수점 연산 장치)**가 없었다.
 
 ### "계산하다가 배터리 터지겠는데요?"
-서미스터(온도 센서) 값을 온도로 바꾸려면 복잡한 로그($log$) 연산이 필요하다.
+서미스터(온도 센서) 값을 온도로 바꾸려면 복잡한 로그(log) 연산이 필요하다.
 FPU도 없는 MCU한테 이 무거운 계산을 시켰더니, 시스템 전체가 버벅(Latency)거리기 시작했다. 0.1초가 급한 고전압 제어 상황에서 이런 딜레이는 치명적이었다. 하드웨어를 바꿀 수도 없는 노릇, 소프트웨어로 어떻게든 뚫어야 했다.
 
 ## 🛠️ 삽질의 결과: 머리가 나쁘면 정답지를 주자
